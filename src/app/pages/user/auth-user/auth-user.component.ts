@@ -81,8 +81,8 @@ export class AuthUserComponent implements OnInit {
 
   ngOnInit(): void {
     this.form = this._fb.group({
-      username: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]],
-      password: ['', [Validators.required, Validators.minLength(3), Validators.maxLength(30)]]
+      username: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]],
+      password: ['', [Validators.required, Validators.minLength(4), Validators.maxLength(30)]]
     });
   }
 }
