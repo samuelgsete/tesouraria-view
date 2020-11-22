@@ -145,7 +145,7 @@
     </div> 
     <div class="movment">
         <app-income></app-income>
-        <mat-accordion>
+        <mat-accordion *ngIf="rows.length == 0">
             <mat-expansion-panel>
                 <mat-expansion-panel-header mdbWavesEffect>
                     <mat-panel-description>Filtre suas transações</mat-panel-description>
