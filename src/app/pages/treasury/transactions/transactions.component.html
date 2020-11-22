@@ -182,7 +182,14 @@
             <div *ngIf="loading">
                 <mat-progress-bar mode="indeterminate"></mat-progress-bar>
             </div>
-            <table class="z-depth-1-half" mdbTable>
+            <mdb-card class="empty-data" *ngIf="rows.length == 0" mdbWavesEffect>
+                <mdb-card-body>
+                    <img src="/assets/img/info.png" width="128px" height="128px" alt="empty info">
+                    <h3>Nenhuma transações foi criada</h3>
+                    <h5>Crie uma clicando no botão acima</h5>     
+                </mdb-card-body>
+            </mdb-card>
+            <table class="z-depth-1-half" mdbTable *ngIf="rows.length != 0">
                 <thead>
                   <tr>
                     <th>Descrição</th>
