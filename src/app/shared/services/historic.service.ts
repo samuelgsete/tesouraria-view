@@ -4,13 +4,13 @@ import { Injectable } from '@angular/core';
 @Injectable()
 export class HistoricService {
 
-    private urlBase: string = 'https://tesouraria-core.herokuapp.com/historic';
+    private urlBase: string = 'https://tesouraria-core.herokuapp.com/treasury';
 
     public constructor(private readonly http: HttpClient) {}
 
-    public getHistoric(treasuryId: number, year: number) {
+    public getHistoric(id: number, year: number) {
         const _params = new HttpParams().set('year', `${year}`);
 
-        return this.http.get<any>(this.urlBase.concat(`/${treasuryId}`), { observe: 'response', params: _params });
+        return this.http.get<any>(this.urlBase.concat(`/${id}/historic`), { observe: 'response', params: _params });
     }
 }
